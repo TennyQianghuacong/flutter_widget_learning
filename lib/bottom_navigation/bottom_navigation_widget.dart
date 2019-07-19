@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'screen.dart';
+import 'package:flutter_widget_learning/screen/screen.dart';
 
-class BNApp extends StatelessWidget{
-
+class BNApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,20 +11,16 @@ class BNApp extends StatelessWidget{
       home: BottomNavigationWidget(),
     );
   }
-
 }
 
-class BottomNavigationWidget extends StatefulWidget{
-
+class BottomNavigationWidget extends StatefulWidget {
   @override
   State<BottomNavigationWidget> createState() {
     return _BottomNavigationWidgetState();
   }
-
 }
 
-class _BottomNavigationWidgetState extends State<BottomNavigationWidget>{
-
+class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   final _navigationColor = Colors.redAccent;
   int _currentIndex = 0;
   List<Widget> list = List();
@@ -33,10 +28,10 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget>{
   @override
   void initState() {
     list
-    ..add(Screen(text: 'HOME', appColor: _navigationColor,))
-    ..add(Screen(text: 'EMAIL', appColor: _navigationColor))
-    ..add(Screen(text: 'PAGES', appColor: _navigationColor))
-    ..add(Screen(text: 'AIRPLAY', appColor: _navigationColor));
+      ..add(EachView(title: 'HOME', color: _navigationColor,))
+      ..add(EachView(title: 'EMAIL', color: _navigationColor))
+      ..add(EachView(title: 'PAGES', color: _navigationColor))
+      ..add(EachView(title: 'AIRPLAY', color: _navigationColor));
     super.initState();
   }
 
@@ -47,55 +42,50 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget>{
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
         currentIndex: _currentIndex,
-        onTap: (int index){
+        onTap: (int index) {
           setState(() {
             _currentIndex = index;
           });
         },
         items: [
           BottomNavigationBarItem(
-            icon:Icon(
-              Icons.home,
-              color: _navigationColor,
-            ),
-            title:Text(
-              'Home',
-              style: TextStyle(color: _navigationColor),
-            )
-          ),
+              icon: Icon(
+                Icons.home,
+                color: _navigationColor,
+              ),
+              title: Text(
+                'Home',
+                style: TextStyle(color: _navigationColor),
+              )),
           BottomNavigationBarItem(
-              icon:Icon(
+              icon: Icon(
                 Icons.email,
                 color: _navigationColor,
               ),
-              title:Text(
+              title: Text(
                 'Email',
                 style: TextStyle(color: _navigationColor),
-              )
-          ),
+              )),
           BottomNavigationBarItem(
-              icon:Icon(
+              icon: Icon(
                 Icons.pages,
                 color: _navigationColor,
               ),
-              title:Text(
+              title: Text(
                 'Pages',
                 style: TextStyle(color: _navigationColor),
-              )
-          ),
+              )),
           BottomNavigationBarItem(
-              icon:Icon(
+              icon: Icon(
                 Icons.airplay,
                 color: _navigationColor,
               ),
-              title:Text(
+              title: Text(
                 'AirPlay',
                 style: TextStyle(color: _navigationColor),
-              )
-          ),
+              )),
         ],
       ),
     );
   }
-
 }

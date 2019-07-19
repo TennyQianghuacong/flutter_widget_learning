@@ -41,12 +41,12 @@ class _IrregularBottomNavigationWidgetState
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.home),
-              color: Colors.white,
+              color: Colors.white70,
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.airport_shuttle),
-              color: Colors.white,
+              icon: Icon(Icons.airplay),
+              color: Colors.white70,
               onPressed: () {},
             )
           ],

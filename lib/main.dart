@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'bottom_navigation/bottom_navigation_widget.dart';
 import 'irregular_bottom_navigation/irregular_bottom_navigation_widget.dart';
 
-void main() => runApp(IBNApp());
+void main() => runApp(BNApp());
 
 class MyApp extends StatelessWidget {
 
