@@ -7,7 +7,7 @@ class BNApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter bottomNavigationBar',
+      title: 'Flutter BottomNavigationBar',
       theme: ThemeData.light(),
       home: BottomNavigationWidget(),
     );
