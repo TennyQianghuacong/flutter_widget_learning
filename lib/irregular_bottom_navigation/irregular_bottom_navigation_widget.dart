@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_learning/screen/screen.dart';
 
 class IBNApp extends StatelessWidget {
   @override
@@ -18,13 +19,35 @@ class IrregularBottomNavigationWidget extends StatefulWidget {
   }
 }
 
-class _IrregularBottomNavigationWidgetState
-    extends State<IrregularBottomNavigationWidget> {
+class _IrregularBottomNavigationWidgetState extends State<IrregularBottomNavigationWidget> {
+  final _navigationColor = Colors.lightGreen;
+  int _currentIndex = 0;
+  List<Widget> widgetList = List();
+
+  @override
+  void initState() {
+    super.initState();
+    widgetList
+      ..add(EachView(
+        title: 'HOME',
+        color: _navigationColor,
+      ))
+      ..add(EachView(
+        title: 'AIRPLAY',
+        color: _navigationColor,
+      ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: widgetList[_currentIndex],
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+            return EachView(title: "ADD", color: Colors.lightGreen,);
+          }));
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.add,
@@ -33,7 +56,7 @@ class _IrregularBottomNavigationWidgetState
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: Colors.lightGreen,
+        color: _navigationColor,
         shape: CircularNotchedRectangle(),
         child: Row(
           mainAxisSize: MainAxisSize.max,
@@ -42,12 +65,20 @@ class _IrregularBottomNavigationWidgetState
             IconButton(
               icon: Icon(Icons.home),
               color: Colors.white70,
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 0;
+                });
+              },
             ),
             IconButton(
               icon: Icon(Icons.airplay),
               color: Colors.white70,
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 1;
+                });
+              },
             )
           ],
         ),
