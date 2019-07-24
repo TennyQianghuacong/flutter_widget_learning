@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_widget_learning/route_anim/route_anim.dart';
 import 'bottom_navigation/bottom_navigation_widget.dart';
 import 'irregular_bottom_navigation/irregular_bottom_navigation_widget.dart';
 
-void main() => runApp(IBNApp());
+void main() => runApp(RAApp());
 
 class MyApp extends StatelessWidget {
 
