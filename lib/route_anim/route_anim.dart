@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_learning/route_anim/custom_router.dart';
 
 class RAApp extends StatelessWidget{
   @override
@@ -29,9 +30,10 @@ class FirstPage extends StatelessWidget{
           ),
           onPressed: (){
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (BuildContext context){
+              CustomRoute(SecondPage())
+              /*MaterialPageRoute(builder: (BuildContext context){
                 return SecondPage();
-              })
+              })*/
             );
           },
         ),
