@@ -4,7 +4,7 @@ class Screen extends StatelessWidget {
   final String text;
   final Color appColor;
 
-  const Screen({Key key, this.text, this.appColor}) : super(key: key);
+  const Screen({Key key, @required this.text, this.appColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

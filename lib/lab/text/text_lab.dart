@@ -22,7 +22,10 @@ class TextLabApp extends StatelessWidget {
   }
 }
 
+
+
 class TextMulti extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,6 +52,7 @@ class TextMulti extends StatelessWidget {
         ),
         Text(
           "Hello world, I'm Tenny. " * 4,
+          style: TextStyle(fontFamily: 'Chinese', color: Colors.lightGreen),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -68,7 +72,26 @@ class TextMulti extends StatelessWidget {
           //    recognizer:_TabRecognizer()
           //TODO 在这个位置加入点击识别
           )
-        ]))
+        ])),
+        DefaultTextStyle(
+          style: TextStyle(
+            color: Colors.redAccent,
+            fontSize: 20.0,
+          ),
+          textAlign: TextAlign.start,
+          child: Column(
+            children: <Widget>[
+              Text("hello world"),
+              Text("I am Tenny"),
+              Text("I am Tenny",
+                style: TextStyle(
+                    inherit: false, //2.不继承默认样式
+                    color: Colors.grey
+                ),
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
