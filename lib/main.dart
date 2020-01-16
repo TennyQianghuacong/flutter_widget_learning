@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'My App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My App'),
+          title: Text('Hello My App'),
           backgroundColor: Colors.yellowAccent,
         ),
         body: Center(
